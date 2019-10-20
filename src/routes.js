@@ -1,6 +1,8 @@
 const express = require('express')
-const Routes = express.Router()
+const routes = express.Router()
 
 const DashboardController = require('./controllers/DashboardController')
 
-Routes.get('/dashboard', DashboardController.index)
+routes.get('/dashboard', DashboardController.index)
+
+module.exports = routes

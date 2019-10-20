@@ -1,7 +1,22 @@
+const api = require('../services/api')
+
 const DashboardController = {
-  index(req, res) {
-    res.json(true)
+  async index(req, res) {
+    try {
+      const reps = await api.get('/republic')
+      res.json({
+        success: true,
+        message: 'Repúblicas encontradas',
+        body: reps.data.body
+      })
+    } catch (error) {
+      res.status(400).json({
+        success: false,
+        message: 'Nenhum resultado retornado',
+        body: null
+      })
+    }
   }
 }
 
-modules.exports = DashboardController
+module.exports = DashboardController
