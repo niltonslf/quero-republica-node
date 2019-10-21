@@ -13,7 +13,7 @@ class DashboardController {
       res.status(400).json({
         success: false,
         message: 'Nenhum resultado retornado',
-        body: null
+        body: error
       })
     }
   }
