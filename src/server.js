@@ -9,6 +9,8 @@ app.use(cors())
 app.use(routes)
 
 const port = 3333
+const host = 'http://localhost'
+
 app.listen(port, () => {
-  console.log(`Server started on: http://localhost:${port}`)
+  console.log(`Server started on: ${host}:${port}`)
 })
